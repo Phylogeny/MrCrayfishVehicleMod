@@ -850,8 +850,7 @@ public class EntityRaytracer
             if (boxesApplicable.contains(entry.getKey().getBox()))
             {
                 lookBox = raytraceTriangles(entity, pos, eyeVecRotated, lookBox, distanceShortest, eyes, direction, entry.getKey(), entry.getValue());
-                distanceShortest = updateShortestDistance(lookBox,
-                        distanceShortest);
+                distanceShortest = updateShortestDistance(lookBox, distanceShortest);
             }
         }
         return lookBox;
@@ -880,8 +879,7 @@ public class EntityRaytracer
             for (Entry<RayTracePart, TriangleRayTraceList> entry : triangles.entrySet())
             {
                 lookPart = raytraceTriangles(entity, pos, eyeVecRotated, lookPart, distanceShortest, eyes, direction, entry.getKey(), entry.getValue());
-                distanceShortest = updateShortestDistance(lookPart,
-                        distanceShortest);
+                distanceShortest = updateShortestDistance(lookPart, distanceShortest);
             }
         }
         return lookPart;
