@@ -790,7 +790,7 @@ public class EntityRaytracer
         // Perform raytrace on the dynamic boxes and triangles of the entity's parts
         lookBox = raytraceBoxTriangles(entity, pos, eyeVecRotated, lookBox, distanceShortest, eyes, direction, interactionBoxes, boxProvider.getDynamicInteractionBoxMap());
         distanceShortest = updateShortestDistance(lookBox, distanceShortest);
-        lookPart = raytracePartTriangles(entity, pos, eyeVecRotated, lookPart, distanceShortest, direction, eyes, entityRaytraceTrianglesDynamic);
+        lookPart = raytracePartTriangles(entity, pos, eyeVecRotated, lookPart, distanceShortest, eyes, direction, entityRaytraceTrianglesDynamic);
         distanceShortest = updateShortestDistance(lookPart, distanceShortest);
 
         boolean isDynamic = lookBox != null || lookPart != null;
@@ -800,7 +800,7 @@ public class EntityRaytracer
         {
             lookBox = raytraceBoxTriangles(entity, pos, eyeVecRotated, lookBox, distanceShortest, eyes, direction, interactionBoxes, boxProvider.getStaticInteractionBoxMap());
             distanceShortest = updateShortestDistance(lookBox, distanceShortest);
-            lookPart = raytracePartTriangles(entity, pos, eyeVecRotated, lookPart, distanceShortest, direction, eyes, entityRaytraceTrianglesStatic);
+            lookPart = raytracePartTriangles(entity, pos, eyeVecRotated, lookPart, distanceShortest, eyes, direction, entityRaytraceTrianglesStatic);
         }
         // Return the result object of hit with hit vector rotated back in the same direction as the entity's rotation yaw, or null it no hit occurred
         if (lookPart != null)
